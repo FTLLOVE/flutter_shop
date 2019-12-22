@@ -1,3 +1,5 @@
+import 'dart:io';
+
 /**
  * @author: FTL
  * @date: 2019/12/19 14:47
@@ -18,10 +20,12 @@ class HomeTopNavigationWidget extends StatelessWidget {
       this.navigationList.removeRange(10, this.navigationList.length);
     }
 
+    var width = MediaQuery.of(context).size.width;
     return Container(
-      height: ScreenUtil().setHeight(275),
+      height: width / 2.35,
       padding: EdgeInsets.all(10),
       child: GridView.count(
+        physics: NeverScrollableScrollPhysics(),
         crossAxisCount: 5,
         childAspectRatio: 1,
         children: this.navigationList.map((item) {

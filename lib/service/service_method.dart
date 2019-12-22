@@ -27,10 +27,12 @@ Future request(url, {formData}) async {
   }
 }
 
+// 首页火爆专区数据请求
 Future getHomePageBelowContent(formData) async {
   return request("homePageBelowContent", formData: formData);
 }
 
+// 首页基本数据请求
 Future getHomeContent() async {
   var formData = {'lon': '115.02932', 'lat': '35.76189'};
   return request("homeContent", formData: formData);

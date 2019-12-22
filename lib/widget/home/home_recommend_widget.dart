@@ -1,3 +1,8 @@
+/**
+ * @author: FTL
+ * @date: 2019-12-21 16:38
+ * @desc: 首页推荐组件
+ */
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -9,14 +14,11 @@ class HomeRecommendWidget extends StatelessWidget {
 
   Widget titleContainer = Container(
     margin: EdgeInsets.only(top: 2),
-    padding: EdgeInsets.only(
-      left: 10,
-      bottom: 2,
-    ),
+    padding: EdgeInsets.only(left: 10, bottom: 4, top: 3),
     alignment: Alignment.centerLeft,
     child: Text(
       "热门推荐",
-      style: TextStyle(color: Color(0xffdf1581)),
+      style: TextStyle(color: Color(0xffdf1581), fontSize: 16),
     ),
     decoration: BoxDecoration(
         border: Border(bottom: BorderSide(color: Color(0xffeeeeee)))),
@@ -24,6 +26,7 @@ class HomeRecommendWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
     return Column(
       children: <Widget>[
         Container(
@@ -33,7 +36,7 @@ class HomeRecommendWidget extends StatelessWidget {
         ),
         titleContainer,
         Container(
-          height: ScreenUtil().setHeight(320),
+          height: (width / 2) * 0.92,
           child: ListView.builder(
               itemCount: recommondList.length,
               scrollDirection: Axis.horizontal,
@@ -63,11 +66,12 @@ class RecommendItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
     return InkWell(
       onTap: () {},
       child: Container(
         padding: EdgeInsets.all(5),
-        width: ScreenUtil().setHeight(250),
+        width: width / 3,
         child: Column(
           children: <Widget>[
             Image.network(
