@@ -109,6 +109,7 @@ class _HomePageState extends State<HomePage>
                   });
                 },
                 footer: MaterialFooter(),
+                firstRefreshWidget: Spinkit(),
               );
             } else {
               return Center(

@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+
 /**
  * @author: FTL
  * @date: 2019-12-22 18:50
@@ -76,9 +78,19 @@ class HomeHotItemWidget extends StatelessWidget {
         margin: EdgeInsets.only(bottom: 3),
         child: Column(
           children: <Widget>[
-            Image.network(
-              image,
+            CachedNetworkImage(
+              fit: BoxFit.fill,
+              imageUrl: this.image,
               width: ScreenUtil().setWidth(375),
+              placeholder: (context, url) {
+                return Container(
+                  height: ScreenUtil().setHeight(300),
+                  color: Colors.grey,
+                  child: Text("加载中"),
+                  alignment: Alignment.center,
+                );
+              },
+              errorWidget: (context, url, error) => Icon(Icons.error),
             ),
             Text(
               this.name,

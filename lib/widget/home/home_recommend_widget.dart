@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+
 /**
  * @author: FTL
  * @date: 2019-12-21 16:38
@@ -74,9 +76,18 @@ class RecommendItemWidget extends StatelessWidget {
         width: width / 3,
         child: Column(
           children: <Widget>[
-            Image.network(
-              image,
+            CachedNetworkImage(
               fit: BoxFit.fill,
+              imageUrl: this.image,
+              placeholder: (context, url) {
+                return Container(
+                  height: ScreenUtil().setHeight(200),
+                  color: Colors.grey,
+                  child: Text("加载中"),
+                  alignment: Alignment.center,
+                );
+              },
+              errorWidget: (context, url, error) => Icon(Icons.error),
             ),
             Text("￥${price}"),
             Text(

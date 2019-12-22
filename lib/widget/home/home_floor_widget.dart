@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+
 /**
  * @author: FTL
  * @date: 2019/12/19 21:47
@@ -28,9 +30,18 @@ class HomeFloorWidget extends StatelessWidget {
   Widget _floorTitlePicWidget(String floorTitlePic) {
     return Container(
       padding: EdgeInsets.all(8),
-      child: Image.network(
-        floorTitlePic,
+      child: CachedNetworkImage(
         fit: BoxFit.fill,
+        imageUrl: this.floorTitlePic,
+        placeholder: (context, url) {
+          return Container(
+            height: ScreenUtil().setHeight(100),
+            color: Colors.grey,
+            child: Text("加载中"),
+            alignment: Alignment.center,
+          );
+        },
+        errorWidget: (context, url, error) => Icon(Icons.error),
       ),
     );
   }
@@ -68,7 +79,19 @@ class HomeFloorWidget extends StatelessWidget {
         onTap: () {
           print("hello");
         },
-        child: Image.network(item['image']),
+        child: CachedNetworkImage(
+          fit: BoxFit.fill,
+          imageUrl: item['image'],
+          placeholder: (context, url) {
+            return Container(
+              height: ScreenUtil().setHeight(150),
+              color: Colors.grey,
+              child: Text("加载中"),
+              alignment: Alignment.center,
+            );
+          },
+          errorWidget: (context, url, error) => Icon(Icons.error),
+        ),
       ),
     );
   }

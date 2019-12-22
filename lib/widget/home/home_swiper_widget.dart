@@ -6,6 +6,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class HomeSwiperWidget extends StatelessWidget {
   List swiperList;
@@ -20,9 +21,17 @@ class HomeSwiperWidget extends StatelessWidget {
       child: Swiper(
         itemCount: this.swiperList.length,
         itemBuilder: (BuildContext context, int index) {
-          return Image.network(
-            "${swiperList[index]['image']}",
+          return CachedNetworkImage(
             fit: BoxFit.fill,
+            imageUrl: "${swiperList[index]['image']}",
+            placeholder: (context, url) {
+              return Container(
+                color: Colors.grey,
+                child: Text("加载中"),
+                alignment: Alignment.center,
+              );
+            },
+            errorWidget: (context, url, error) => Icon(Icons.error),
           );
         },
         pagination: SwiperPagination(),

@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:cached_network_image/cached_network_image.dart';
+
 /**
  * @author: FTL
  * @date: 2019/12/19 14:47
@@ -53,9 +55,19 @@ class HomeNavigationItemWidget extends StatelessWidget {
       onTap: () {},
       child: Column(
         children: <Widget>[
-          Image.network(
-            this.image,
+          CachedNetworkImage(
             height: ScreenUtil().setHeight(80),
+            fit: BoxFit.fill,
+            imageUrl: this.image,
+            placeholder: (context, url) {
+              return Container(
+                height: ScreenUtil().setHeight(80),
+                color: Colors.grey,
+                child: Text("加载中"),
+                alignment: Alignment.center,
+              );
+            },
+            errorWidget: (context, url, error) => Icon(Icons.error),
           ),
           Text(
             this.navigationName,
