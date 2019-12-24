@@ -90,9 +90,7 @@ class _HomePageState extends State<HomePage>
                           height: 10,
                           color: Color(0xfff2f2f2),
                         ),
-                        HomeHotWidget(
-                          hotGoods: hotGoodList,
-                        ),
+                        HomeHotWidget(hotGoods: hotGoodList,),
                       ],
                     ),
                   ],

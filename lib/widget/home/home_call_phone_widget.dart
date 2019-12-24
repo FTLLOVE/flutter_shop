@@ -1,10 +1,9 @@
-import 'package:cached_network_image/cached_network_image.dart';
-
 /**
  * @author: FTL
  * @date: 2019/12/19 21:47
  * @desc: 首页呼叫组件
  */
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:url_launcher/url_launcher.dart';

@@ -1,3 +1,8 @@
+/**
+ * @author: FTL
+ * @date: 2019-12-23 13:35
+ * @desc: APP底部Tab
+ */
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import '../pages/home_page.dart';

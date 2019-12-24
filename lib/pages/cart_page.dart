@@ -1,3 +1,8 @@
+/**
+ * @author: FTL
+ * @date: 2019-12-23 13:36
+ * @desc: 购物车
+ */
 import 'package:flutter/material.dart';
 
 class CartPage extends StatefulWidget {
