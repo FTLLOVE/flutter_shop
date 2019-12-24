@@ -4,6 +4,8 @@
  * @desc: 我的
  */
 import 'package:flutter/material.dart';
+import '../provide/Counter.dart';
+import 'package:provide/provide.dart';
 
 class MyPage extends StatefulWidget {
   @override
@@ -19,7 +21,12 @@ class _MyPageState extends State<MyPage> with AutomaticKeepAliveClientMixin {
         elevation: 0,
       ),
       body: Center(
-        child: Text("我的"),
+        child: Provide<Counter>(builder: (context, child, val) {
+          return Text(
+            "${val.value}",
+            style: TextStyle(fontSize: 30),
+          );
+        }),
       ),
     );
   }

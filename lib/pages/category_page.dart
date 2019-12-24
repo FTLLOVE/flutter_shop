@@ -4,7 +4,12 @@
  * @desc: 分类
  */
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import '../service/service_method.dart';
+import 'dart:convert';
+import '../widget/category/category_left_widget.dart';
+import '../widget/category/category_right_widget.dart';
+import '../provide/CategoryList.dart';
+import 'package:provide/provide.dart';
 
 class CategoryPage extends StatefulWidget {
   @override
@@ -12,39 +17,43 @@ class CategoryPage extends StatefulWidget {
 }
 
 class _CategoryPageState extends State<CategoryPage> {
+  List categoryList = [];
+
+  @override
+  void initState() {
+    this._getCategoryList();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    _getCategoryList();
     return Scaffold(
-        appBar: AppBar(
-          title: Text("分类"),
-          elevation: 0,
-        ),
-        body: StaggeredGridView.count(
-          primary: false,
-          crossAxisCount: 4,
-          mainAxisSpacing: 4.0,
-          crossAxisSpacing: 4.0,
-          children: const <Widget>[
-            const Text('1'),
-            const Text('2'),
-            const Text('3'),
-            const Text('4'),
-            const Text('5'),
-            const Text('6'),
-            const Text('7'),
-            const Text('8'),
-          ],
-          staggeredTiles: const <StaggeredTile>[
-            const StaggeredTile.count(2, 2),
-            const StaggeredTile.count(2, 1),
-            const StaggeredTile.count(2, 2),
-            const StaggeredTile.count(2, 1),
-            const StaggeredTile.count(2, 2),
-            const StaggeredTile.count(2, 1),
-            const StaggeredTile.count(2, 2),
-            const StaggeredTile.count(2, 1),
-          ],
-        )
+      appBar: AppBar(
+        title: Text("分类"),
+        elevation: 0,
+      ),
+      body: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          CategoryLeftListWidget(
+            list: categoryList,
+          ),
+          Expanded(
+            child: CategoryRightWidget(list: categoryList),
+          )
+        ],
+      ),
     );
+  }
+
+  void _getCategoryList() async {
+    await getCategoryList().then((val) {
+      var data = json.decode(val.toString());
+      List<Map> list = (data['data'] as List).cast();
+      setState(() {
+        categoryList = list;
+      });
+    });
   }
 }

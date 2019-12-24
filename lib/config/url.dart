@@ -7,5 +7,7 @@ const serviceUrl = 'http://v.jspang.com:8088/baixing/';
 
 const servicePath = {
   'homeContent': serviceUrl + "wxmini/homePageContent",
-  'homePageBelowContent': serviceUrl + "wxmini/homePageBelowConten"
+  'homePageBelowContent': serviceUrl + "wxmini/homePageBelowConten",
+  "categoryList": serviceUrl + "wxmini/getCategory",
+  "getMallGoods": serviceUrl + "wxmini/getMallGoods"
 };

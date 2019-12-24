@@ -5,8 +5,19 @@
  */
 import 'package:flutter/material.dart';
 import 'navigator/tab_navigator.dart';
+import 'provide/Counter.dart';
+import 'provide/CategoryList.dart';
+import 'package:provide/provide.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  var counter = Counter();
+  var categoryList = CategoryList();
+  var providers = Providers();
+  providers
+    ..provide(Provider<Counter>.value(counter))
+    ..provide(Provider<CategoryList>.value(categoryList));
+  runApp(ProviderNode(child: MyApp(), providers: providers));
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -19,5 +30,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// StatelessWidget(无状态组件) && StatefulWidget(有状态组件)

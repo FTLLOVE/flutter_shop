@@ -37,3 +37,13 @@ Future getHomeContent() async {
   var formData = {'lon': '115.02932', 'lat': '35.76189'};
   return request("homeContent", formData: formData);
 }
+
+// 分类页面的类目基本数据请求
+Future getCategoryList() async {
+  return request("categoryList", formData: null);
+}
+
+// 分类页面的商品数据请求
+Future getMallGoods(formData) async {
+  return request("getMallGoods", formData: formData);
+}
