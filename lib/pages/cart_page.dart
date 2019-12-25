@@ -4,6 +4,7 @@
  * @desc: 购物车
  */
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:provide/provide.dart';
 import '../provide/Counter.dart';
 import '../provide/CategoryList.dart';
@@ -20,19 +21,21 @@ class _CartPageState extends State<CartPage> {
         appBar: AppBar(
           title: Text("购物车"),
         ),
-        body: Container(
-          child: Provide<CategoryList>(builder: (context, child, val) {
-            return GridView.count(
-              crossAxisCount: 2,
-              children: <Widget>[
-                Text("hello"),
-                Text("hello"),
-                Text("hello"),
-                Text("hello"),
-                Text("hello"),
-              ],
-            );
-          }),
+        body: Center(
+          child: Stack(
+            alignment: FractionalOffset(0.5, 0.5),
+            children: <Widget>[
+              Container(
+                height: 80,
+                width: 80,
+                child: Image.asset(
+                  "assets/images/logo.png",
+                  fit: BoxFit.fill,
+                ),
+              ),
+              Text("hello")
+            ],
+          ),
         ));
   }
 

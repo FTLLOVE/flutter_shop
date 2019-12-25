@@ -57,11 +57,11 @@ class HomeNavigationItemWidget extends StatelessWidget {
             fit: BoxFit.fill,
             imageUrl: this.image,
             placeholder: (context, url) {
-              return Container(
+              return Image.asset(
+                "assets/images/logo.png",
+                fit: BoxFit.fill,
                 height: ScreenUtil().setHeight(80),
-                color: Colors.grey,
-                child: Text("加载中"),
-                alignment: Alignment.center,
+                width: ScreenUtil().setWidth(80),
               );
             },
             errorWidget: (context, url, error) => Icon(Icons.error),

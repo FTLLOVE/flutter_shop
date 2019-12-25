@@ -8,8 +8,6 @@ import '../service/service_method.dart';
 import 'dart:convert';
 import '../widget/category/category_left_widget.dart';
 import '../widget/category/category_right_widget.dart';
-import '../provide/CategoryList.dart';
-import 'package:provide/provide.dart';
 
 class CategoryPage extends StatefulWidget {
   @override

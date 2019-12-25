@@ -90,7 +90,9 @@ class _HomePageState extends State<HomePage>
                           height: 10,
                           color: Color(0xfff2f2f2),
                         ),
-                        HomeHotWidget(hotGoods: hotGoodList,),
+                        HomeHotWidget(
+                          hotGoods: hotGoodList,
+                        ),
                       ],
                     ),
                   ],
@@ -106,7 +108,13 @@ class _HomePageState extends State<HomePage>
                     });
                   });
                 },
-                footer: MaterialFooter(),
+                footer: ClassicalFooter(
+                    showInfo: false,
+                    bgColor: Colors.white,
+                    loadReadyText: "准备加载",
+                    loadingText: "加载中",
+                    loadedText: "无更多数据",
+                    noMoreText: "无更多数据"),
                 firstRefreshWidget: Spinkit(),
               );
             } else {
