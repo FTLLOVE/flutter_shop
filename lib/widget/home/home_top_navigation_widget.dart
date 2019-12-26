@@ -6,6 +6,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../routes/routers.dart';
+import '../../pages/good_list_page.dart';
 
 class HomeTopNavigationWidget extends StatelessWidget {
   final List navigationList;
@@ -29,7 +31,9 @@ class HomeTopNavigationWidget extends StatelessWidget {
         childAspectRatio: 1,
         children: this.navigationList.map((item) {
           return HomeNavigationItemWidget(
-              image: item['image'], navigationName: item['mallCategoryName']);
+              image: item['image'],
+              navigationName: item['mallCategoryName'],
+              categoryId: item['mallCategoryId']);
         }).toList(),
       ),
     );
@@ -38,18 +42,31 @@ class HomeTopNavigationWidget extends StatelessWidget {
 
 /// 首页顶部导航item
 class HomeNavigationItemWidget extends StatelessWidget {
+  final String categoryId;
+
   final String image;
 
   final String navigationName;
 
   HomeNavigationItemWidget(
-      {Key key, @required this.image, @required this.navigationName})
+      {Key key,
+      @required this.image,
+      @required this.navigationName,
+      @required this.categoryId})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        goPage(
+            context,
+            GoodListPage(
+              categoryId: categoryId,
+              categorySubId: null,
+              goodTitle: navigationName,
+            ));
+      },
       child: Column(
         children: <Widget>[
           CachedNetworkImage(

@@ -47,3 +47,8 @@ Future getCategoryList() async {
 Future getMallGoods(formData) async {
   return request("getMallGoods", formData: formData);
 }
+
+// 获取商品详情
+Future getGoodDetailById(formData) async {
+  return request("getGoodDetailById", formData: formData);
+}

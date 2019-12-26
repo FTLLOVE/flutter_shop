@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import '../../routes/routers.dart';
+import '../../pages/good_detail_page.dart';
 
 class HomeSwiperWidget extends StatelessWidget {
   List swiperList;
@@ -21,18 +23,24 @@ class HomeSwiperWidget extends StatelessWidget {
       child: Swiper(
         itemCount: this.swiperList.length,
         itemBuilder: (BuildContext context, int index) {
-          return CachedNetworkImage(
-            fit: BoxFit.fill,
-            imageUrl: "${swiperList[index]['image']}",
-            placeholder: (context, url) {
-              return Image.asset(
-                "assets/images/logo.png",
-                fit: BoxFit.fill,
-                height: ScreenUtil().setHeight(333),
-                width: ScreenUtil().setWidth(750),
-              );
+          return InkWell(
+            onTap: () {
+              goPage(context,
+                  GoodDetailPage(goodId: swiperList[index]['goodsId']));
             },
-            errorWidget: (context, url, error) => Icon(Icons.error),
+            child: CachedNetworkImage(
+              fit: BoxFit.fill,
+              imageUrl: "${swiperList[index]['image']}",
+              placeholder: (context, url) {
+                return Image.asset(
+                  "assets/images/logo.png",
+                  fit: BoxFit.fill,
+                  height: ScreenUtil().setHeight(333),
+                  width: ScreenUtil().setWidth(750),
+                );
+              },
+              errorWidget: (context, url, error) => Icon(Icons.error),
+            ),
           );
         },
         pagination: SwiperPagination(),

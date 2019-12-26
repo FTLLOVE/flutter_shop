@@ -5,6 +5,8 @@ import '../widget/common/spinkit.dart';
 import '../service/service_method.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'good_detail_page.dart';
+import '../routes/routers.dart';
 
 class GoodListPage extends StatefulWidget {
   final String categoryId;
@@ -73,7 +75,8 @@ class _GoodListPageState extends State<GoodListPage> {
             itemBuilder: (BuildContext context, int index) {
               return InkWell(
                 onTap: () {
-                  print("详情");
+                  goPage(context,
+                      GoodDetailPage(goodId: categotyList[index]['goodsId']));
                 },
                 child: Container(
                   padding: EdgeInsets.all(10),

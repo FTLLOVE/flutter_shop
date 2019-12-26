@@ -11,7 +11,6 @@ import 'package:flutter_app/widget/home/home_floor_widget.dart';
 import 'package:flutter_app/widget/home/home_recommend_widget.dart';
 import 'package:flutter_app/widget/home/home_swiper_widget.dart';
 import 'package:flutter_app/widget/home/home_top_navigation_widget.dart';
-import 'package:flutter_easyrefresh/material_footer.dart';
 import '../service/service_method.dart';
 import 'dart:convert';
 import 'package:flutter_easyrefresh/easy_refresh.dart';

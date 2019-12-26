@@ -6,6 +6,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../routes/routers.dart';
+import '../../pages/good_detail_page.dart';
 
 class HomeFloorWidget extends StatelessWidget {
   final String floorTitlePic;
@@ -21,7 +23,7 @@ class HomeFloorWidget extends StatelessWidget {
     return Column(
       children: <Widget>[
         _floorTitlePicWidget(floorTitlePic),
-        _floorPicListWidget(floorPicList)
+        _floorPicListWidget(context, floorPicList)
       ],
     );
   }
@@ -45,25 +47,25 @@ class HomeFloorWidget extends StatelessWidget {
     );
   }
 
-  Widget _floorPicListWidget(List floorPicList) {
+  Widget _floorPicListWidget(BuildContext context, List floorPicList) {
     return Container(
       child: Column(
         children: <Widget>[
           Row(
             children: <Widget>[
-              _floorItemWidget(floorPicList[0]),
+              _floorItemWidget(context, floorPicList[0]),
               Column(
                 children: <Widget>[
-                  _floorItemWidget(floorPicList[1]),
-                  _floorItemWidget(floorPicList[2]),
+                  _floorItemWidget(context, floorPicList[1]),
+                  _floorItemWidget(context, floorPicList[2]),
                 ],
               )
             ],
           ),
           Row(
             children: <Widget>[
-              _floorItemWidget(floorPicList[3]),
-              _floorItemWidget(floorPicList[4]),
+              _floorItemWidget(context, floorPicList[3]),
+              _floorItemWidget(context, floorPicList[4]),
             ],
           )
         ],
@@ -71,12 +73,12 @@ class HomeFloorWidget extends StatelessWidget {
     );
   }
 
-  Widget _floorItemWidget(Map item) {
+  Widget _floorItemWidget(BuildContext context, Map item) {
     return Container(
       width: ScreenUtil().setWidth(375),
       child: InkWell(
         onTap: () {
-          print("hello");
+          goPage(context, GoodDetailPage(goodId: item['goodsId']));
         },
         child: CachedNetworkImage(
           fit: BoxFit.fill,

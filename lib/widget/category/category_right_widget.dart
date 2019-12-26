@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provide/provide.dart';
 import '../../provide/CategoryList.dart';
 import '../../pages/good_list_page.dart';
+import '../../routes/routers.dart';
 
 class CategoryRightWidget extends StatelessWidget {
   List list;
@@ -23,17 +24,15 @@ class CategoryRightWidget extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               return InkWell(
                 onTap: () {
-                  Navigator.push(
+                  goPage(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => GoodListPage(
-                                categoryId: list[0]['bxMallSubDto'][index]
-                                    ['mallCategoryId'],
-                                categorySubId: list[0]['bxMallSubDto'][index]
-                                    ['mallSubId'],
-                                goodTitle: list[0]['bxMallSubDto'][index]
-                                    ['mallSubName'],
-                              )));
+                      GoodListPage(
+                          categoryId: list[0]['bxMallSubDto'][index]
+                              ['mallCategoryId'],
+                          categorySubId: list[0]['bxMallSubDto'][index]
+                              ['mallSubId'],
+                          goodTitle: list[0]['bxMallSubDto'][index]
+                              ['mallSubName']));
                 },
                 child: Stack(
                   alignment: FractionalOffset(0.5, 0.5),
@@ -67,17 +66,15 @@ class CategoryRightWidget extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               return InkWell(
                 onTap: () {
-                  Navigator.push(
+                  goPage(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => GoodListPage(
-                                categoryId: val.currentBxMallSubDto[index]
-                                    ['mallCategoryId'],
-                                categorySubId: val.currentBxMallSubDto[index]
-                                    ['mallSubId'],
-                                goodTitle: val.currentBxMallSubDto[index]
-                                    ['mallSubName'],
-                              )));
+                      GoodListPage(
+                          categoryId: val.currentBxMallSubDto[index]
+                              ['mallCategoryId'],
+                          categorySubId: val.currentBxMallSubDto[index]
+                              ['mallSubId'],
+                          goodTitle: val.currentBxMallSubDto[index]
+                              ['mallSubName']));
                 },
                 child: Stack(
                   alignment: FractionalOffset(0.5, 0.5),

@@ -6,6 +6,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../pages/good_detail_page.dart';
+import '../../routes/routers.dart';
 
 class HomeHotWidget extends StatelessWidget {
   final List hotGoods;
@@ -37,6 +39,7 @@ class HomeHotWidget extends StatelessWidget {
 
     List<Widget> listWidget = hotGoods.map((item) {
       return HomeHotItemWidget(
+          goodsId: item['goodsId'],
           image: item['image'],
           name: item['name'],
           mallPrice: item['mallPrice'],
@@ -51,6 +54,7 @@ class HomeHotWidget extends StatelessWidget {
 }
 
 class HomeHotItemWidget extends StatelessWidget {
+  final String goodsId;
   final String image;
   final String name;
   final double mallPrice;
@@ -58,6 +62,7 @@ class HomeHotItemWidget extends StatelessWidget {
 
   HomeHotItemWidget(
       {Key key,
+      @required this.goodsId,
       @required this.image,
       @required this.name,
       @required this.mallPrice,
@@ -68,7 +73,7 @@ class HomeHotItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        print("hello");
+        goPage(context, GoodDetailPage(goodId: goodsId));
       },
       child: Container(
         width: ScreenUtil().setWidth(372),

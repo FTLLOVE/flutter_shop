@@ -6,6 +6,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../routes/routers.dart';
+import '../../pages/good_detail_page.dart';
 
 class HomeRecommendWidget extends StatelessWidget {
   final List recommondList;
@@ -43,6 +45,7 @@ class HomeRecommendWidget extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemBuilder: (BuildContext context, int index) {
                 return RecommendItemWidget(
+                    goodsId: recommondList[index]['goodsId'],
                     image: recommondList[index]['image'],
                     price: recommondList[index]['mallPrice'],
                     mallPrice: recommondList[index]['price']);
@@ -54,12 +57,14 @@ class HomeRecommendWidget extends StatelessWidget {
 }
 
 class RecommendItemWidget extends StatelessWidget {
+  final String goodsId;
   final String image;
   final double price;
   final double mallPrice;
 
   RecommendItemWidget(
       {Key key,
+      @required this.goodsId,
       @required this.image,
       @required this.price,
       @required this.mallPrice})
@@ -69,7 +74,9 @@ class RecommendItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        goPage(context, GoodDetailPage(goodId: goodsId));
+      },
       child: Container(
         padding: EdgeInsets.all(5),
         width: width / 3,
