@@ -80,7 +80,7 @@ class _GoodListPageState extends State<GoodListPage> {
                 },
                 child: Container(
                   padding: EdgeInsets.all(10),
-                  height: ScreenUtil().setHeight(160),
+                  height: ScreenUtil().setHeight(170),
                   child: Row(
                     children: <Widget>[
                       CachedNetworkImage(
@@ -98,18 +98,19 @@ class _GoodListPageState extends State<GoodListPage> {
                         errorWidget: (context, url, error) => Icon(Icons.error),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 10, left: 10),
+                        margin: EdgeInsets.only(top: 10, left: 10, right: 10),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text(
                               categotyList[index]['goodsName'],
                               maxLines: 2,
+                              softWrap: false,
                               overflow: TextOverflow.ellipsis,
-                              style: TextStyle(fontSize: 14),
+                              style: TextStyle(fontSize: 12),
                             ),
                             Container(
-                              margin: EdgeInsets.only(top: 15),
+                              margin: EdgeInsets.only(top: 20),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.center,

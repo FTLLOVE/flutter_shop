@@ -17,15 +17,15 @@ class GoodMiddleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 10, left: 10),
+      padding: EdgeInsets.only(top: 10, left: 10, right: 5),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
             goodName,
-            maxLines: 2,
+            maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: TextStyle(color: Color(0xff505050), fontSize: 17),
+            style: TextStyle(color: Color(0xff505050), fontSize: 16),
           ),
           Container(
             padding: EdgeInsets.only(left: 5, right: 20),

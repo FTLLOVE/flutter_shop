@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/widget/good/good_intro_widget.dart';
 import 'package:flutter_app/widget/good/good_middle_widget.dart';
@@ -7,6 +8,8 @@ import '../service/service_method.dart';
 import '../widget/good/good_top_widget.dart';
 import '../widget/common/spinkit.dart';
 import 'package:toast/toast.dart';
+import '../dao/data_base_helper.dart';
+import '../model/cart_model.dart';
 
 class GoodDetailPage extends StatefulWidget {
   String goodId;
@@ -22,6 +25,7 @@ class _GoodDetailPageState extends State<GoodDetailPage> {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     var formData = {"goodId": widget.goodId};
+    var db = DatabaseHelper();
     return Scaffold(
       appBar: AppBar(
         title: Text("商品详情"),
@@ -32,6 +36,7 @@ class _GoodDetailPageState extends State<GoodDetailPage> {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               var data = json.decode(snapshot.data.toString());
+              String goodId = data['data']['goodInfo']['goodsId'].toString();
               String image1 = data['data']['goodInfo']['image1'].toString();
               String goodsName =
                   data['data']['goodInfo']['goodsName'].toString();
@@ -42,7 +47,8 @@ class _GoodDetailPageState extends State<GoodDetailPage> {
               String goodComments = data['data']['goodInfo']['goodComments'];
               return Stack(
                 children: <Widget>[
-                  ListView(
+                  Positioned(
+                      child: ListView(
                     children: <Widget>[
                       GoodTopWidget(
                         image: image1,
@@ -56,9 +62,17 @@ class _GoodDetailPageState extends State<GoodDetailPage> {
                       GoodIntroWidget(
                         goodsDetail: goodsDetail,
                         goodComments: goodComments,
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(top: 5, bottom: 15),
+                        alignment: Alignment.center,
+                        child: Text(
+                          "我也是有底线的...",
+                          style: TextStyle(color: Colors.grey),
+                        ),
                       )
                     ],
-                  ),
+                  )),
                   Positioned(
                       bottom: 0,
                       left: 0,
@@ -82,8 +96,25 @@ class _GoodDetailPageState extends State<GoodDetailPage> {
                               ),
                             ),
                             InkWell(
-                              onTap: () {
-                                Toast.show("添加成功", context);
+                              onTap: () async {
+                                String id = widget.goodId;
+                                Toast.show("添加成功", context,
+                                    backgroundRadius: 5);
+                                db.getItem(id).then((val) {
+                                  if (val != null) {
+                                    val.count = val.count + 1;
+                                    db.updateItem(val);
+                                  } else {
+                                    CartModel cartModel = CartModel();
+                                    cartModel.id = null;
+                                    cartModel.goodId = id;
+                                    cartModel.name = goodsName;
+                                    cartModel.image = image1;
+                                    cartModel.price = presentPrice;
+                                    cartModel.count = 1;
+                                    db.saveItem(cartModel);
+                                  }
+                                });
                               },
                               child: Container(
                                 width: width * 3 / 7,
