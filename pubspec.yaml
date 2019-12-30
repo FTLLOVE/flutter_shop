@@ -27,6 +27,8 @@ dependencies:
   toast: ^0.1.4
   sqflite: ^1.2.0
   shared_preferences: ^0.5.6
+  flutter_custom_dialog: ^1.0.14
+
 
 dev_dependencies:
   flutter_test:

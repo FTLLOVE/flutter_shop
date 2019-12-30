@@ -4,6 +4,7 @@
  * @desc: 首页
  */
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_app/widget/common/spinkit.dart';
 import 'package:flutter_app/widget/home/home_advertise_banner_widget.dart';
 import 'package:flutter_app/widget/home/home_call_phone_widget.dart';
@@ -28,6 +29,8 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle.dark.copyWith(statusBarColor: Color(0xffdf1581)));
     return Scaffold(
       appBar: AppBar(
         title: Text("百姓生活+"),

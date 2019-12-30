@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import '../provide/Counter.dart';
 import 'package:provide/provide.dart';
 import '../dao/data_base_helper.dart';
+import '../dao/data_base_helper.dart';
 
 class MyPage extends StatefulWidget {
   @override
@@ -22,25 +23,20 @@ class _MyPageState extends State<MyPage> with AutomaticKeepAliveClientMixin {
         title: Text("我的"),
         elevation: 0,
       ),
-      body: Center(
-        child: Provide<Counter>(builder: (context, child, val) {
-          return Column(
-            children: <Widget>[
-              Text(
-                "${val.value}",
-                style: TextStyle(fontSize: 30),
-              ),
-              RaisedButton(
-                onPressed: () {
-                  db.getTotalList().then((val) {
-                    print(val);
-                  });
-                },
-                child: Text("查看"),
-              )
-            ],
-          );
-        }),
+      body: FutureBuilder(
+        future: db.getSum(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            var data = snapshot.data.toString();
+            print(data);
+
+            return Center(
+              child: Text("${data}"),
+            );
+          } else {
+            return Text("hello");
+          }
+        },
       ),
     );
   }

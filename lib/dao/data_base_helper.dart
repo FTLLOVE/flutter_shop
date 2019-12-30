@@ -50,15 +50,21 @@ class DatabaseHelper {
   Future<int> saveItem(CartModel cartModel) async {
     var dbClient = await db;
     int res = await dbClient.insert("$tableName", cartModel.toMap());
-    print(res.toString());
     return res;
   }
 
   //查询
-  Future<List> getTotalList() async {
+  Future<Map> getTotalList() async {
     var dbClient = await db;
     var result = await dbClient.rawQuery("SELECT * FROM $tableName ");
-    return result.toList();
+    double sum = 0.0;
+    for (var planet in result.toList()) {
+      sum = sum + planet['price'] * planet['count'];
+    }
+    Map<String, dynamic> map = Map();
+    map['list'] = result.toList();
+    map['sum'] = sum;
+    return map;
   }
 
   //查询总数
@@ -66,6 +72,17 @@ class DatabaseHelper {
     var dbClient = await db;
     return Sqflite.firstIntValue(
         await dbClient.rawQuery("SELECT COUNT(*) FROM $tableName"));
+  }
+
+  Future<double> getSum() async {
+    var dbClient = await db;
+    var result = await dbClient.rawQuery("SELECT * FROM $tableName");
+    List list = result.toList();
+    double sum = 0.0;
+    for (var planet in list) {
+      sum = sum + planet['price'] * planet['count'];
+    }
+    return sum;
   }
 
   //按照id查询

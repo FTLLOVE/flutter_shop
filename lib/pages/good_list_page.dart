@@ -79,8 +79,8 @@ class _GoodListPageState extends State<GoodListPage> {
                       GoodDetailPage(goodId: categotyList[index]['goodsId']));
                 },
                 child: Container(
-                  padding: EdgeInsets.all(10),
-                  height: ScreenUtil().setHeight(170),
+                  padding:
+                      EdgeInsets.only(left: 10, right: 10, bottom: 5, top: 5),
                   child: Row(
                     children: <Widget>[
                       CachedNetworkImage(
@@ -92,13 +92,14 @@ class _GoodListPageState extends State<GoodListPage> {
                           return Image.asset(
                             "assets/images/logo.png",
                             fit: BoxFit.fill,
-                            height: ScreenUtil().setHeight(315),
+                            height: ScreenUtil().setHeight(160),
                           );
                         },
                         errorWidget: (context, url, error) => Icon(Icons.error),
                       ),
-                      Container(
-                        margin: EdgeInsets.only(top: 10, left: 10, right: 10),
+                      Expanded(
+                          child: Container(
+                        padding: EdgeInsets.only(right: 10, top: 10, left: 10),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
@@ -107,7 +108,8 @@ class _GoodListPageState extends State<GoodListPage> {
                               maxLines: 2,
                               softWrap: false,
                               overflow: TextOverflow.ellipsis,
-                              style: TextStyle(fontSize: 12),
+                              style:
+                                  TextStyle(fontSize: ScreenUtil().setSp(33)),
                             ),
                             Container(
                               margin: EdgeInsets.only(top: 20),
@@ -116,15 +118,15 @@ class _GoodListPageState extends State<GoodListPage> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
                                   Text(
-                                    categotyList[index]['presentPrice']
-                                        .toString(),
-                                    style: TextStyle(fontSize: 17),
+                                    "￥${categotyList[index]['presentPrice']}",
+                                    style: TextStyle(
+                                        fontSize: ScreenUtil().setSp(32),
+                                        color: Color(0xffdf1581)),
                                   ),
                                   Container(
                                     margin: EdgeInsets.only(left: 20),
                                     child: Text(
-                                      categotyList[index]['oriPrice']
-                                          .toString(),
+                                      "￥${categotyList[index]['oriPrice']}",
                                       style: TextStyle(
                                           color: Colors.black26,
                                           decoration:
@@ -136,7 +138,7 @@ class _GoodListPageState extends State<GoodListPage> {
                             )
                           ],
                         ),
-                      )
+                      ))
                     ],
                   ),
                   decoration: BoxDecoration(

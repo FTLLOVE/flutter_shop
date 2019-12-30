@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/widget/good/good_intro_widget.dart';
 import 'package:flutter_app/widget/good/good_middle_widget.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../service/service_method.dart';
 import '../widget/good/good_top_widget.dart';
 import '../widget/common/spinkit.dart';
@@ -36,7 +37,6 @@ class _GoodDetailPageState extends State<GoodDetailPage> {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               var data = json.decode(snapshot.data.toString());
-              String goodId = data['data']['goodInfo']['goodsId'].toString();
               String image1 = data['data']['goodInfo']['image1'].toString();
               String goodsName =
                   data['data']['goodInfo']['goodsName'].toString();
@@ -64,8 +64,8 @@ class _GoodDetailPageState extends State<GoodDetailPage> {
                         goodComments: goodComments,
                       ),
                       Container(
-                        padding: EdgeInsets.only(top: 5, bottom: 15),
-                        alignment: Alignment.center,
+                        height: 70,
+                        alignment: Alignment.topCenter,
                         child: Text(
                           "我也是有底线的...",
                           style: TextStyle(color: Colors.grey),
