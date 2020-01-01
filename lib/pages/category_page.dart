@@ -1,8 +1,8 @@
-/**
- * @author: FTL
- * @date: 2019-12-23 13:35
- * @desc: 分类
- */
+///
+/// @author: FTL
+/// @date: 2019-12-31 16:55
+/// @desc: 分类
+///
 import 'package:flutter/material.dart';
 import '../service/service_method.dart';
 import 'dart:convert';
@@ -30,6 +30,8 @@ class _CategoryPageState extends State<CategoryPage> {
       appBar: AppBar(
         title: Text("分类"),
         elevation: 0,
+        centerTitle: true,
+
       ),
       body: Row(
         crossAxisAlignment: CrossAxisAlignment.start,

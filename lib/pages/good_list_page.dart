@@ -1,3 +1,8 @@
+///
+/// @author: FTL
+/// @date: 2019-12-31 16:54
+/// @desc: 商品列表
+///
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -68,6 +73,7 @@ class _GoodListPageState extends State<GoodListPage> {
       return Scaffold(
         appBar: AppBar(
           title: Text("${widget.goodTitle}"),
+          centerTitle: true,
         ),
         body: EasyRefresh(
           controller: _controller,

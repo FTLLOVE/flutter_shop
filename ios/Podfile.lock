@@ -4,6 +4,8 @@ PODS:
   - Flutter (1.0.0)
   - flutter_custom_dialog (0.0.1):
     - Flutter
+  - flutter_webview_plugin (0.0.1):
+    - Flutter
   - fluwx (0.0.1):
     - Flutter
   - FMDB (2.7.5):
@@ -33,6 +35,7 @@ DEPENDENCIES:
   - camera (from `.symlinks/plugins/camera/ios`)
   - Flutter (from `Flutter`)
   - flutter_custom_dialog (from `.symlinks/plugins/flutter_custom_dialog/ios`)
+  - flutter_webview_plugin (from `.symlinks/plugins/flutter_webview_plugin/ios`)
   - fluwx (from `.symlinks/plugins/fluwx/ios`)
   - image_picker (from `.symlinks/plugins/image_picker/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
@@ -55,6 +58,8 @@ EXTERNAL SOURCES:
     :path: Flutter
   flutter_custom_dialog:
     :path: ".symlinks/plugins/flutter_custom_dialog/ios"
+  flutter_webview_plugin:
+    :path: ".symlinks/plugins/flutter_webview_plugin/ios"
   fluwx:
     :path: ".symlinks/plugins/fluwx/ios"
   image_picker:
@@ -80,6 +85,7 @@ SPEC CHECKSUMS:
   camera: 38cc83ae9a5667bb5a71c7d9edaf60a91920fd4e
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   flutter_custom_dialog: c0d222a3c35af5b57581e54ef8784c94037cd2ec
+  flutter_webview_plugin: ed9e8a6a96baf0c867e90e1bce2673913eeac694
   fluwx: 765c6052398eaf6fe13c73409488b0d0b9d00fd6
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   image_picker: e3eacd46b94694dde7cf2705955cece853aa1a8f

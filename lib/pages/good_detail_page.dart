@@ -1,10 +1,13 @@
+///
+/// @author: FTL
+/// @date: 2019-12-31 16:55
+/// @desc: 商品详情
+///
 import 'dart:convert';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/widget/good/good_intro_widget.dart';
 import 'package:flutter_app/widget/good/good_middle_widget.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../service/service_method.dart';
 import '../widget/good/good_top_widget.dart';
 import '../widget/common/spinkit.dart';
@@ -31,6 +34,7 @@ class _GoodDetailPageState extends State<GoodDetailPage> {
       appBar: AppBar(
         title: Text("商品详情"),
         elevation: 0,
+        centerTitle: true,
       ),
       body: FutureBuilder(
           future: getGoodDetailById(formData),

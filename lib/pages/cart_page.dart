@@ -1,14 +1,9 @@
-import 'dart:async';
-import 'dart:convert';
-
-import 'package:dio/dio.dart';
+///
+/// @author: FTL
+/// @date: 2019-12-31 16:54
+/// @desc: 购物车
+///
 import 'package:flutter/cupertino.dart';
-
-/**
- * @author: FTL
- * @date: 2019-12-23 13:36
- * @desc: 购物车
- */
 import 'package:flutter/material.dart';
 import 'package:flutter_app/dao/data_base_helper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -29,6 +24,7 @@ class _CartPageState extends State<CartPage> {
       appBar: AppBar(
         title: Text("购物车"),
         elevation: 0,
+        centerTitle: true,
       ),
       body: FutureBuilder(
         future: db.getTotalList(),
@@ -36,7 +32,6 @@ class _CartPageState extends State<CartPage> {
           if (snapshot.hasData) {
             var list = snapshot.data['list'];
             var sum = snapshot.data['sum'];
-            print(sum);
             if (list.length > 0) {
               return Stack(
                 children: <Widget>[

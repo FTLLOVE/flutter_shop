@@ -1,8 +1,8 @@
-/**
- * @author: FTL
- * @date: 2019/12/19 14:48
- * @desc: 首页
- */
+///
+/// @author: FTL
+/// @date: 2019-12-31 16:55
+/// @desc: 首页
+///
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_app/widget/common/spinkit.dart';
@@ -35,6 +35,8 @@ class _HomePageState extends State<HomePage>
       appBar: AppBar(
         title: Text("百姓生活+"),
         elevation: 0,
+        centerTitle: true,
+
       ),
       body: FutureBuilder(
           future: getHomeContent(),
