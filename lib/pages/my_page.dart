@@ -13,7 +13,6 @@ import 'order_page.dart';
 import 'login_page.dart';
 import 'webview_page.dart';
 import 'map_page.dart';
-import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 
 class MyPage extends StatefulWidget {
   @override

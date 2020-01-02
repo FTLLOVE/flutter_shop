@@ -10,6 +10,7 @@ class AppColors {
   static const DividerColor = 0xfff7f7f7;
   static const RightIconColor = 0xff828382;
   static const LoginInputBgColor = 0xfff8f8f8;
+  static const AddressBgColor = 0xffefefef;
 }
 
 class Constants {
