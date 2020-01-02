@@ -8,13 +8,13 @@
 
 <img src="https://fantuike.com/0d9d7b7cd0404ad99b25a31b6e0d0c1c.jpg" alt="分类" width="300"/><img src="https://fantuike.com/9e210573d7114cbd826b7d249d3393af.jpg" alt="购物车" width="300"/>
 
-<img src="https://fantuike.com/b25e6faf74c844ef8e1a2f730a13e61d.jpg" alt="关于我" width="300"/><img src="https://fantuike.com/6ac8ac67a1444348acc55bd998955a45.jpg " alt="商品列表" width="300"/>
+<img src="https://fantuike.com/b25e6faf74c844ef8e1a2f730a13e61d.jpg" alt="关于我" width="300"/><img src="https://fantuike.com/6ac8ac67a1444348acc55bd998955a45.jpg" alt="商品列表" width="300"/>
 
-<img src="https://fantuike.com/83775e98aecb4d09a5c9bacc8578a124.jpg" alt="设置高德" width="300"/><img src="https://fantuike.com/651a0aad36784eb9bf302167919927c4.jpg " alt="首页" width="300"/>
+<img src="https://fantuike.com/83775e98aecb4d09a5c9bacc8578a124.jpg" alt="设置高德" width="300"/><img src="https://fantuike.com/651a0aad36784eb9bf302167919927c4.jpg" alt="首页" width="300"/>
 
-<img src="https://fantuike.com/7ee0f47745d745c68203e96cabd8b256.jpg " alt="首页热门" width="300"/><img src="https://fantuike.com/6072bbd5b591460cb305b85d57cedce8.jpg " alt="首页推荐" width="300"/>
+<img src="https://fantuike.com/7ee0f47745d745c68203e96cabd8b256.jpg " alt="首页热门" width="300"/><img src="https://fantuike.com/6072bbd5b591460cb305b85d57cedce8.jpg" alt="首页推荐" width="300"/>
 
-<img src="https://fantuike.com/e643d220f7604411b3e48690a8e6f87c.jpg  " alt="首页热门" width="300"/>
+<img src="https://fantuike.com/e643d220f7604411b3e48690a8e6f87c.jpg" alt="首页热门" width="300"/>
 
 ### IOS
 
@@ -26,7 +26,7 @@
 
 <img src="https://fantuike.com/38d1c735459e454fa5f24e4ffceef49e.png" alt="订单" width="300"/><img src="https://fantuike.com/4fa4e03e04274d5fa24109ca156f7206.png" alt="购物车" width="300"/>
 
-<img src="https://fantuike.com/9e531ef877d64828b16ccc162e8840c5.png " alt="关于我" width="300"/><img src="https://fantuike.com/d2b5a4a763bf48b7b167c9cb656df5e6.png" alt="我的" width="300"/>
+<img src="https://fantuike.com/9e531ef877d64828b16ccc162e8840c5.png" alt="关于我" width="300"/><img src="https://fantuike.com/d2b5a4a763bf48b7b167c9cb656df5e6.png" alt="我的" width="300"/>
 ## 说明
 
 > 这个项目是仿百姓生活+的小程序，我从2019.10.20开始做，到2020.1.1结束。相信大家肯定会说这个和技术胖大佬的很像或则一样，但是自己看看代码的话，你会发现有很多不同的地方，这里面包括页面的一些页面的设置还有插件的选择都有所不同。项目是跑在安卓真机上的，IOS是跑在模拟器上的，因为地图在模拟器上看不到效果。等我有空就把开发步骤写下来，做成一个教程。希望大家给我点个star哦~~~
