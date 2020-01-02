@@ -12,13 +12,13 @@
 
 <img src="https://fantuike.com/83775e98aecb4d09a5c9bacc8578a124.jpg" alt="设置高德" width="300"/><img src="https://fantuike.com/651a0aad36784eb9bf302167919927c4.jpg" alt="首页" width="300"/>
 
-<img src="https://fantuike.com/7ee0f47745d745c68203e96cabd8b256.jpg " alt="首页热门" width="300"/><img src="https://fantuike.com/6072bbd5b591460cb305b85d57cedce8.jpg" alt="首页推荐" width="300"/>
+<img src="https://fantuike.com/7ee0f47745d745c68203e96cabd8b256.jpg" alt="首页热门" width="300"/><img src="https://fantuike.com/6072bbd5b591460cb305b85d57cedce8.jpg" alt="首页推荐" width="300"/>
 
 <img src="https://fantuike.com/e643d220f7604411b3e48690a8e6f87c.jpg" alt="首页热门" width="300"/>
 
 ### IOS
 
-<img src="https://fantuike.com/6d866495f75a4289b3c8225e84b0bf64.png" alt="首页" width="300"/><img src="https://fantuike.com/f2efaf4ab1b0420dadf7e4d6e0d67e40.png " alt="首页热门" width="300"/>
+<img src="https://fantuike.com/6d866495f75a4289b3c8225e84b0bf64.png" alt="首页" width="300"/><img src="https://fantuike.com/f2efaf4ab1b0420dadf7e4d6e0d67e40.png" alt="首页热门" width="300"/>
 
 <img src="https://fantuike.com/1498e2bfd1a945629212e394d470a683.png" alt="首页推荐" width="300"/><img src="https://fantuike.com/56b32e0d18284d339b717de77dc910ef.png" alt="分类" width="300"/>
 
